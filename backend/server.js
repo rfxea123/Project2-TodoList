@@ -62,6 +62,38 @@ app.put('/tasks/:id', (req,res)=>{
     })
 }) 
 
+// long code how to get true or false
+// app.get('/complete', (req,res)=>{
+//     Todo.find({isCompleted: true},(err, data)=>{
+//         if(err){
+//             console.log('ERR', err);
+//         }else{
+//             res.json(data)
+//         }
+//     })
+// })
+
+// app.get('/notComplete', (req,res)=>{
+//     Todo.find({isCompleted: false},(err, data)=>{
+//         if(err){
+//             console.log('ERR', err);
+//         }else{
+//             res.json(data)
+//         }
+//     })
+})
+
+app.get('/filter', (req,res)=>{
+    Todo.find({isCompleted: req.query.isCompleted},(err, data)=>{
+        if(err){
+            console.log('ERR', err);
+        }else{
+            res.json(data)
+        }
+    })
+})
+
+
 app.listen(5000, ()=>{
     console.log('SERVER IS WORKING ...');
 })
