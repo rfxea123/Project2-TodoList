@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import axios from 'axios'
 import Todo from './component/Todo'
+import Add from './component/Add'
 
 function App() {
 
@@ -23,6 +24,19 @@ function App() {
     })
   }
 
+  const postNewTodo=(body)=>{
+    axios
+    .post('http://localhost:5000/tasks',body)
+    .then((Response)=>{
+      console.log('DATA: ' , Response.data);
+      // setTask(Response.data)
+      getData()
+    })
+    .catch((err)=>{
+      console.log('ERR: ', err);
+    })
+  }
+
   const mapOverTasks=tasks.map((taskObj, i)=>( 
   <Todo key={i} task={taskObj}/>
   ))
@@ -30,6 +44,7 @@ function App() {
   return (
     <div className="App">
       <p>app</p>
+      <Add createFunc={postNewTodo}/>
       <button onClick={getData}>GET TASKS</button>
 
 

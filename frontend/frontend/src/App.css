@@ -3,7 +3,15 @@
 }
 
 .Todo{
-  border: blue solid 5px;
+  border: blue solid 3px;
+}
+
+.Todo span{
+  margin:  0px 10px 0px 10px;
+}
+
+.Add{
+  border: green solid 3px;
 }
 
 .App-logo {
