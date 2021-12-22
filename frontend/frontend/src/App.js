@@ -37,10 +37,22 @@ function App() {
     })
   }
 
-  const mapOverTasks=tasks.map((taskObj, i)=>( 
-  <Todo key={i} task={taskObj}/>
-  ))
+  const deleteTodo=(id)=>{
+    axios
+    .delete(`http://localhost:5000/tasks/${id}`)
+    .then((Response)=>{
+      console.log('DATA: ' , Response.data);
+      // setTask(Response.data)
+      getData()
+    })
+    .catch((err)=>{
+      console.log('ERR: ', err);
+    })
+  }
 
+  const mapOverTasks=tasks.map((taskObj, i)=>( 
+  <Todo key={i} task={taskObj} deleteTodo={deleteTodo}/>
+  ))
   return (
     <div className="App">
       <p>app</p>
