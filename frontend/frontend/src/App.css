@@ -2,7 +2,7 @@
   border: red solid 5px;
 }
 
-.Todo{
+.Todo .Login{
   border: blue solid 3px;
 }
 
@@ -10,7 +10,7 @@
   margin:  0px 10px 0px 10px;
 }
 
-.Add{
+.Add, .Register{
   border: green solid 3px;
 }
 

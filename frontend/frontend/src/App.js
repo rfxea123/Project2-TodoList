@@ -4,6 +4,7 @@ import './App.css';
 import axios from 'axios'
 import Todo from './component/Todo'
 import Add from './component/Add'
+import Register from './component/Register';
 
 function App() {
 
@@ -106,8 +107,8 @@ function App() {
         filterData(false)
       }}>GET PENDING</button>
 
-
-      {mapOverTasks}
+      <Register/>
+      {/* {mapOverTasks} */}
 
     </div>
   );
