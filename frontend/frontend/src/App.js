@@ -12,6 +12,8 @@ import Login from './component/Login';
 function App() {
 
   const [tasks, setTask] = useState([])
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [username, setUsername] = useState("")
 
   useEffect(()=>{
     getData()
@@ -100,6 +102,7 @@ function App() {
   return (
     <div className="App">
       <p>app</p>
+      <p>{username}</p>
 
 
 <nav>
@@ -125,7 +128,9 @@ function App() {
           <Add createFunc={postNewTodo}/>
           {mapOverTasks}
         </div>} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login 
+        setIsLoggedIn={setIsLoggedIn}
+        setUsername={setUsername} />} />
         <Route path="/register" element={<Register />} />
       </Routes>
 
