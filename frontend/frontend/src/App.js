@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react'
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios'
+import { Routes, Route, Link } from "react-router-dom";
+
 import Todo from './component/Todo'
 import Add from './component/Add'
 import Register from './component/Register';
@@ -98,19 +100,28 @@ function App() {
   return (
     <div className="App">
       <p>app</p>
-      <Add createFunc={postNewTodo}/>
-      <button onClick={getData}>GET TASKS</button>
-      <button onClick={deleteTasks}>DELETE completed tasks</button>
-      <button onClick={()=>{
-        filterData(true)
-      }}>GET DONE</button>
-      <button onClick={()=>{
-        filterData(false)
-      }}>GET PENDING</button>
+      <Routes>
+        <Route path="/home" element={
+        <div className='Home'>
+          <button onClick={getData}>GET TASKS</button>
+          <button onClick={deleteTasks}>DELETE completed tasks</button>
+          <button onClick={()=>{
+            filterData(true)
+            }}>GET DONE
+          </button>
+          <button onClick={()=>{
+            filterData(false)
+            }}>GET PENDING
+          </button>
+          <Add createFunc={postNewTodo}/>
+          {mapOverTasks}
+        </div>} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
 
-      <Register/>
-      <Login/>
-      {/* {mapOverTasks} */}
+
+      
 
     </div>
   );
