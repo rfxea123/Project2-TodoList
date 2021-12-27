@@ -5,6 +5,7 @@ import axios from 'axios'
 import Todo from './component/Todo'
 import Add from './component/Add'
 import Register from './component/Register';
+import Login from './component/Login';
 
 function App() {
 
@@ -108,6 +109,7 @@ function App() {
       }}>GET PENDING</button>
 
       <Register/>
+      <Login/>
       {/* {mapOverTasks} */}
 
     </div>

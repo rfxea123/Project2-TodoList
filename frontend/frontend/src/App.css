@@ -2,7 +2,7 @@
   border: red solid 5px;
 }
 
-.Todo .Login{
+.Todo, .Login{
   border: blue solid 3px;
 }
 
