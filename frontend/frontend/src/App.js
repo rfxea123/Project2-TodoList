@@ -100,6 +100,15 @@ function App() {
   return (
     <div className="App">
       <p>app</p>
+
+
+<nav>
+  <Link to="/home">Home</Link> {' | '}
+  <Link to="/login">Login</Link> {' | '}
+  <Link to="/register">Register</Link>
+</nav>
+<br/>
+
       <Routes>
         <Route path="/home" element={
         <div className='Home'>
