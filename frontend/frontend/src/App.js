@@ -120,7 +120,6 @@ function App() {
     id="navbarNav">
       <ul className="navbar-nav">
         <li className="nav-item"> 
-          href="#">Home
           <Link to="/home" 
           className="nav-link active">
             Home</Link>
