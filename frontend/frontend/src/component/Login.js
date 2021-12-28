@@ -69,9 +69,13 @@ value={email}/>
 value={password}/>
   <label for="floatingPassword">Password</label>
   </div>
+  <div className='text-center'>
   <input type='submit' value='Login' 
                 onClick={loginFunc} className="btn btn-primary"/>
-                 <Link to="/register" className="btn btn-link">Don't Have An Account</Link>
+                 <Link to="/register" 
+                 className="btn btn-link">
+                     Don't Have An Account</Link>
+                     </div>
                  </form>
         </div>
     )
