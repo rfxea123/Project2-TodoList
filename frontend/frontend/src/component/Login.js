@@ -50,24 +50,24 @@ export default function Login(props) {
                  <Link to="/register">Don't Have An Account</Link>
             </form> */}
             <form>
-            <div class="form-floating mb-3">
-  <input type="email" class="form-control" 
+            <div className="form-floating mb-3">
+  <input type="email" className="form-control" 
   id="floatingInput" 
   onChange={(e)=>{
     setEmail(e.target.value)
 }} 
 value={email}/>
-  <label for="floatingInput">Email address</label>
+  <label htmlFor="floatingInput">Email address</label>
 </div>
-<div class="mb-3 form-floating">
+<div className="mb-3 form-floating">
   <input type="password" 
-  class="form-control" 
+  className="form-control" 
   id="floatingPassword"
   onChange={(e)=>{
     setPassword(e.target.value)
 }}
 value={password}/>
-  <label for="floatingPassword">Password</label>
+  <label htmlFor="floatingPassword">Password</label>
   </div>
   <div className='text-center'>
   <input type='submit' value='Login' 
