@@ -56,7 +56,7 @@ export default function Register() {
                 />
                 <br/>
                 <input type="submit" value="Register" 
-                onClick={registerFunc}/>
+                onClick={registerFunc} className="btn btn-secondary"/>
                  <Link to="/login">Have An Account</Link>
             </form>
         </div>
