@@ -2,8 +2,12 @@
   border: red solid 5px;
 }
 
-.Todo, .Login{
+.Todo{
   border: blue solid 3px;
+}
+
+.Login form {
+  max-width: 75%;
 }
 
 .Todo span{

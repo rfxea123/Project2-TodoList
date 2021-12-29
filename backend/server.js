@@ -160,9 +160,9 @@ app.post("/users/login", (req, res) => {
       // console.log(data);
       if(arrUserFound.length === 1){
         if(req.body.password === arrUserFound[0].password){
-          res.status(200).json({messge:'login successfully', username: arrUserFound[0].username})
+          res.status(200).json({message:'login successfully', username: arrUserFound[0].username})
         }else{
-          res.status(404).json('wrong password')
+          res.status(404).json({message:'wrong password'})
         }
         
       }else{

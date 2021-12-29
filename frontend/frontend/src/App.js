@@ -107,7 +107,7 @@ function App() {
   ))
   return (
     <div className="">
-      <p>Name {username}</p>
+      {/* <p>Name {username}</p> */}
 
 
 
