@@ -98,19 +98,20 @@ function App() {
   setUsername("")
   }
   const mapOverTasks=tasks.map((taskObj, i)=>( 
-  <Todo key={taskObj._id} 
+  <Todo 
+  key={taskObj._id} 
   task={taskObj} 
   deleteTodo={deleteTodo}
-  toggleTodo={toggleTodo}/>
+  toggleTodo={toggleTodo}
+  />
   ))
   return (
-    <div className="App">
-      <p>app</p>
-      <p>{username}</p>
+    <div className="">
+      <p>Name {username}</p>
 
 
 
-<nav className="navbar navbar-expand-lg navbar-light bg-light">
+<nav className="navbar navbar-expand-lg navbar-light bg-light m-3">
   <div className="container-fluid">
     <a className="navbar-brand" href="#">Todos</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -136,24 +137,38 @@ function App() {
 </nav>
 
 <br/>
-<button onClick={logoutFunc}>Logout</button>
+<div className='m-3 text-center'>
+<button class="btn btn-outline-info" onClick={logoutFunc}>Logout</button>
+<button type="button" 
+class="btn btn btn-outline-dark m-2" 
+data-bs-toggle="popover" 
+title="Todo List" 
+data-bs-content='Welcome to Todo List web Application'>
+{username? 'Welcome '+ username: 'Please Login'}</button>
+</div>
 
       <Routes>
         <Route path="/home" element={
-        <div className='Home'>
-          <button onClick={getData}>GET TASKS</button>
-          <button onClick={deleteTasks}>DELETE completed tasks</button>
-          <button onClick={()=>{
+        <div className='Home m-3'>
+          <div className='Home mb-3 text-center'>
+          <button className="btn btn-primary m-2" onClick={getData}>GET TASKS</button>
+          <button  className="btn btn-danger m-2" onClick={deleteTasks}>DELETE Completed Tasks</button>
+          <button className="btn btn-outline-success m-2" onClick={()=>{
             filterData(true)
             }}>GET DONE
           </button>
-          <button onClick={()=>{
+          <button className="btn btn-outline-warning m-2" onClick={()=>{
             filterData(false)
             }}>GET PENDING
           </button>
+          
+          </div>
           <Add createFunc={postNewTodo}/>
-          {mapOverTasks}
-        </div>} />
+          <div className="list-group">
+            {mapOverTasks}
+          </div>
+        </div>
+        }/>
         <Route path="/login" element={<Login 
         setIsLoggedIn={setIsLoggedIn}
         setUsername={setUsername} />} />
